@@ -1,0 +1,7 @@
+<table>
+  <tr *ngFor="let row of layout">
+    <td *ngFor="let col of row">
+      <img *ngIf="col" [src]="col == 'A' ? A : col == 'S' ? S : B">
+    </td>
+  </tr>
+</table>
