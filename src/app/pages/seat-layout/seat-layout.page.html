@@ -2,11 +2,25 @@
   <ion-toolbar>
     <ion-title>Select Seats</ion-title>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="tabs/home"></ion-back-button>
+      <ion-back-button defaultHref="/tabs/home"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-<app-seat-picker></app-seat-picker>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-label>
+            Lower: 450
+        </ion-label>
+        
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <app-seat-picker></app-seat-picker>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

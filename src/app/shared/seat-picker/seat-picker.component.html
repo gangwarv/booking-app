@@ -1,7 +1,27 @@
-<table>
-  <tr *ngFor="let row of layout">
-    <td *ngFor="let col of row">
-      <img *ngIf="col" [src]="col == 'A' ? A : col == 'S' ? S : B">
-    </td>
-  </tr>
-</table>
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <ion-segment (ionChange)="segmentChanged($event)">
+        <ion-segment-button checked value="0">
+          <ion-label>Lower</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="1">
+          <ion-label>Upper</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col offset="2" size="8">
+      <table>
+        <tr *ngFor="let row of layout; let i = index">
+          <ng-container *ngFor="let col of row; let j = index">
+            <td *ngIf="isSeat(i, j)" [rowSpan]="col == 'U' ? 2 : 1">
+              <img *ngIf="col" [src]="col == 'U' ? B : col == 'S' ? S : A" />
+            </td>
+          </ng-container>
+        </tr>
+      </table>
+    </ion-col>
+  </ion-row>
+</ion-grid>
