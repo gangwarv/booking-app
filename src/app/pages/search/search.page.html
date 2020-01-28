@@ -8,14 +8,56 @@
 </ion-header>
 
 <ion-content>
-<ion-list>
-  <ion-item routerLink="/seat-layout">
-    <ion-label>
-      <h3>From - To</h3>
-      <h4>04:10 AM - 10:30 AM</h4>
-      <p>duration: 6:00 hours</p>
-    </ion-label>
-    <ion-icon name="bus" slot="start"></ion-icon>
-  </ion-item>
-</ion-list>
+  <ion-list>
+    <ion-list-header>
+      <ion-label >All Items</ion-label>
+      <ion-button (click)="presentPopover($event)" fill="clear">
+        Filter
+      </ion-button>
+    </ion-list-header>
+    <ion-item *ngFor="let bus of buses" routerLink="/seat-layout" inset="true">
+      <ion-label>
+        <h2>{{ bus.departureTime }} - {{ bus.arrivalTime }}</h2>
+        <p>6:00 hours - 32 seats</p>
+        <h3>{{ bus.operatorName }}</h3>
+        <p>{{ bus.busType }}</p>
+      </ion-label>
+      <ion-label text-right slot="end">
+        <h1>₹250</h1>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <!-- <ion-list lines="none">
+    <ion-list-header>
+      <ion-label>Buses - {{ status.toString() }}</ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-icon slot="start" color="medium" name="globe"></ion-icon>
+      <ion-input [(ngModel)]="url"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon slot="start" color="medium" name="globe"></ion-icon>
+      <ion-button (click)="openBrowser()">Browse</ion-button>
+    </ion-item>
+    <ion-item>
+  </ion-list> -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button color="secondary" >
+          <ion-icon name="color-filter"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
 </ion-content>
+<!-- <ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button>
+      <ion-icon name="calendar"></ion-icon>
+      <ion-label>Schedule</ion-label>
+      <ion-badge>6</ion-badge>
+    </ion-tab-button>
+    <ion-tab-button>
+      <ion-icon name="calendar"></ion-icon>
+      <ion-label>Schedule</ion-label>
+      <ion-badge>6</ion-badge>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs> -->

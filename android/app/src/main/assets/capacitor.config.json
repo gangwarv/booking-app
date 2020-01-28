@@ -1,0 +1,8 @@
+{
+  "appId": "com.manvish.bookingapp",
+  "appName": "Booking App",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "cordova": {}
+}

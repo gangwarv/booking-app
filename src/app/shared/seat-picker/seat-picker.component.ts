@@ -9,7 +9,7 @@ export class SeatPickerComponent implements OnInit {
   // S = "https://img.icons8.com/android/36/000000/steering-wheel.png";
   // A = "https://img.icons8.com/material-outlined/36/000000/bus-seat-top-view.png";
   // B = "https://img.icons8.com/material-rounded/36/000000/bus-seat-top-view.png";
-S = "/assets/layout/steering-wheel.png";
+  S = "/assets/layout/steering-wheel.png";
   A = "/assets/layout/seat_booked.png";
   B = "/assets/layout/sleeper_booked.png";
   // A = Avaliable
@@ -38,18 +38,15 @@ S = "/assets/layout/steering-wheel.png";
     ["A", "A", "A", "A", "A"]
   ];
 
-
   constructor() {}
 
   ngOnInit() {}
 
-  segmentChanged(event){
-
-  }
+  segmentChanged(event) {}
 
   isSeat(i: number, j: number): boolean {
-    if(i>0){
-      return this.layout[i-1][j] !=='U';
+    if (i > 0) {
+      return this.layout[i - 1][j] !== "U";
     }
     return true;
   }
